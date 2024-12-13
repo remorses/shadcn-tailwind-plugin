@@ -1,4 +1,4 @@
-import plugin from 'tailwindcss/plugin'
+import plugin from 'tailwindcss/plugin.js'
 import type { Config } from 'tailwindcss'
 import { parseToHsla, hsla } from 'color2k'
 
@@ -57,7 +57,7 @@ function convertColorToHslValues(color: string): string {
         if (/^\d+(\.\d+)?\s+\d+(\.\d+)?%\s+\d+(\.\d+)?%$/.test(color)) {
             return color
         }
-        
+
         // Convert any valid CSS color to HSL values
         const [h, s, l] = parseToHsla(color)
         const hue = Math.round(h * 360)
@@ -81,7 +81,7 @@ function processColorConfig<T extends Record<string, string>>(
     ) as Record<keyof T, string>
 }
 
-export default function(options: PluginOptions = {}) {
+export default function (options: PluginOptions = {}) {
     const processedLightColors = processColorConfig({
         ...defaultLightColors,
         ...options.lightColors,

@@ -2,8 +2,8 @@
     "name": "tremor-tailwind-plugin",
     "version": "0.0.2",
     "description": "Tailwind CSS plugin for Tremor UI styling",
+    "type": "module",
     "main": "dist/index.js",
-    "module": "esm/index.js",
     "types": "dist/index.d.ts",
     "repository": "https://github.com/remorses/",
     "scripts": {
@@ -16,7 +16,11 @@
         "src",
         "esm"
     ],
-    "keywords": ["tailwindcss", "plugin", "tremor"],
+    "keywords": [
+        "tailwindcss",
+        "plugin",
+        "tremor"
+    ],
     "author": "Tommaso De Rossi, morse <beats.by.morse@gmail.com>",
     "license": "MIT",
     "dependencies": {
