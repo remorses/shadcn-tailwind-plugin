@@ -14,6 +14,9 @@ importers:
       astro:
         specifier: ^5.0.5
         version: 5.0.5(jiti@1.21.6)(rollup@4.28.1)(typescript@5.7.2)(yaml@2.6.1)
+      shadcn-tailwind-plugin:
+        specifier: file:../
+        version: file:..
       tailwindcss:
         specifier: ^3.4.16
         version: 3.4.16
@@ -786,6 +789,9 @@ packages:
   color-string@1.9.1:
     resolution: {integrity: sha512-shrVawQFojnZv6xM40anx4CkoDP+fZsw/ZerEMsW/pyzsRbElpsL/DBVW7q3ExxwusdNXI3lXpuhEZkzs8p5Eg==}
 
+  color2k@2.0.3:
+    resolution: {integrity: sha512-zW190nQTIoXcGCaU08DvVNFTmQhUpnJfVuAKfWqUQkflXKpaDdpaYoM0iluLS9lgJNHyBF58KKA2FBEwkD7wog==}
+
   color@4.2.3:
     resolution: {integrity: sha512-1rXeuUUiGGrykh+CeBdu5Ie7OJwinCgQY0bc7GCRxy5xVHy+moaqkpL/jqQq0MtQOeYcrqEz4abc5f0KtU7W4A==}
     engines: {node: '>=12.5.0'}
@@ -1521,6 +1527,9 @@ packages:
     engines: {node: '>=10'}
     hasBin: true
 
+  shadcn-tailwind-plugin@file:..:
+    resolution: {directory: .., type: directory}
+
   sharp@0.33.5:
     resolution: {integrity: sha512-haPVm1EkS9pgvHrQ/F3Xy+hgcuMV0Wm9vfIBSiwZ05k+xgb0PkBQpGsAA/oWdDobNaZTH5ppvHtzCFbnSEwHVw==}
     engines: {node: ^18.17.0 || ^20.3.0 || >=21.0.0}
@@ -1591,6 +1600,11 @@ packages:
   supports-preserve-symlinks-flag@1.0.0:
     resolution: {integrity: sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==}
     engines: {node: '>= 0.4'}
+
+  tailwindcss-animate@1.0.7:
+    resolution: {integrity: sha512-bl6mpH3T7I3UFxuvDEXLxy/VuFxBk5bbzplh7tXI68mwMokNYd1t9qPBHlnyTwfa4JGC4zP516I1hYYtQ/vspA==}
+    peerDependencies:
+      tailwindcss: '>=3.0.0 || insiders'
 
   tailwindcss@3.4.16:
     resolution: {integrity: sha512-TI4Cyx7gDiZ6r44ewaJmt0o6BrMCT5aK5e0rmJ/G9Xq3w7CX/5VXl/zIPEJZFUK5VEqwByyhqNPycPlvcK4ZNw==}
@@ -2471,6 +2485,8 @@ snapshots:
       color-name: 1.1.4
       simple-swizzle: 0.2.2
     optional: true
+
+  color2k@2.0.3: {}
 
   color@4.2.3:
     dependencies:
@@ -3484,6 +3500,14 @@ snapshots:
 
   semver@7.6.3: {}
 
+  shadcn-tailwind-plugin@file:..:
+    dependencies:
+      color2k: 2.0.3
+      tailwindcss: 3.4.16
+      tailwindcss-animate: 1.0.7(tailwindcss@3.4.16)
+    transitivePeerDependencies:
+      - ts-node
+
   sharp@0.33.5:
     dependencies:
       color: 4.2.3
@@ -3585,6 +3609,10 @@ snapshots:
       ts-interface-checker: 0.1.13
 
   supports-preserve-symlinks-flag@1.0.0: {}
+
+  tailwindcss-animate@1.0.7(tailwindcss@3.4.16):
+    dependencies:
+      tailwindcss: 3.4.16
 
   tailwindcss@3.4.16:
     dependencies:

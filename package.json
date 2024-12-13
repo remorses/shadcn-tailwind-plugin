@@ -1,5 +1,5 @@
 {
-    "name": "tremor-tailwind-plugin",
+    "name": "shadcn-tailwind-plugin",
     "version": "0.0.2",
     "description": "Tailwind CSS plugin for Tremor UI styling",
     "type": "module",
