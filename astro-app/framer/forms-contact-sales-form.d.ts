@@ -11,7 +11,9 @@ export interface Props {
     width?: any
     height?: any
     layoutId?: string
-
+    "variant"?: 'Variant 1' | 'Loading' | 'Success'
+    "padding"?: undefined
+    "gap"?: number
 }
 
 const FormsContactSalesFormFramerComponent = (props: Props) => any

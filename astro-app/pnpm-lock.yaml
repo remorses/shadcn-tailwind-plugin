@@ -36,8 +36,8 @@ importers:
         specifier: ^3.4.16
         version: 3.4.16
       unframer:
-        specifier: ^2.7.7
-        version: 2.7.7(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(undici@7.1.0)
+        specifier: ^2.7.8
+        version: 2.7.8(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(undici@7.1.0)
 
 packages:
 
@@ -1001,14 +1001,6 @@ packages:
   decode-named-character-reference@1.0.2:
     resolution: {integrity: sha512-O8x12RzrUF8xyVcY0KJowWsmaJxQbmy0/EtnNtHRpsOcT7dFk5W598coHqBVpmWo1oQQfsCqfCmkZN5DJrZVdg==}
 
-  dedent@1.5.3:
-    resolution: {integrity: sha512-NHQtfOOW68WD8lgypbLA5oT+Bt0xXJhiYvoR6SmmNXZfpzOGXwdKWmcwG8N7PwVVWV3eF/68nmD9BaJSsTBhyQ==}
-    peerDependencies:
-      babel-plugin-macros: ^3.1.0
-    peerDependenciesMeta:
-      babel-plugin-macros:
-        optional: true
-
   dequal@2.0.3:
     resolution: {integrity: sha512-0je+qPKHEMohvfRTCEo3CrPG6cAzAYgmzKyxRiYSSDkS6eGJdyVJm7WaYA5ECaAD9wLB2T4EEeymA5aFVcYXCA==}
     engines: {node: '>=6'}
@@ -1353,6 +1345,9 @@ packages:
 
   jsonfile@6.1.0:
     resolution: {integrity: sha512-5dgndWOriYSm5cnYaJNhalLNDKOqFwyDB/rr1E9ZsGciGvKPs8R2xYGCacuf3z6K1YKDz182fd+fY3cn3pMqXQ==}
+
+  just-kebab-case@4.2.0:
+    resolution: {integrity: sha512-p2BdO7o4BI+pMun3J+dhaOfYan5JsZrw9wjshRjkWY9+p+u+kKSMhNWYnot2yHDR9CSahZ9iT3dcqJ+V72qHMw==}
 
   kleur@3.0.3:
     resolution: {integrity: sha512-eTIzlVOSUR+JxdDFepEYcBMtZ9Qqdef+rnzWdRZuMbOywu5tO2w2N7rqjoANZ5k9vywhL6Br1VRjUIgTQx4E8w==}
@@ -1916,6 +1911,10 @@ packages:
   sprintf-js@1.0.3:
     resolution: {integrity: sha512-D9cPgkvLlV3t3IzL0D0YLvGA9Ahk4PcvVwUbN0dSGr1aP0Nrt4AEnTUbuGvquEC0mA64Gqt1fzirlRs5ibXx8g==}
 
+  string-dedent@3.0.1:
+    resolution: {integrity: sha512-A2zCXSgpPrpFi1lDJlDwIPYakBWeDtQZ8ZBKssB8M/WbtNEKTzsl1yCDRmHx55jSB27xZDQ6NOtRYekESWx6fw==}
+    engines: {node: '>=0.12.0'}
+
   string-width@4.2.3:
     resolution: {integrity: sha512-wKyQRQpjJ0sIp62ErSZdGsjMJWsap5oRNihHhu6G7JVO/9jIB6UyevL+tXuOqrng8j/cxKTWyWUwvSTriiZz/g==}
     engines: {node: '>=8'}
@@ -2025,8 +2024,8 @@ packages:
     resolution: {integrity: sha512-3+mdX2R31khuLCm2mKExSlMdJsfol7bJkIMH80tdXA74W34rT1jKemUTlYR7WY3TqsV4wfOgpatWmmB2Jl1+5g==}
     engines: {node: '>=20.18.1'}
 
-  unframer@2.7.7:
-    resolution: {integrity: sha512-DTIfsrf7pjrIIHZeM7W1PwoYSi4V7Ybv7uXhtWqBZ88BNmLkid6Xw/PKpa6mLnpxGqGCadDDwmqWG0DsGNNYfQ==}
+  unframer@2.7.8:
+    resolution: {integrity: sha512-48pwgzl9/oWMcQZJasAiYbPqMNdK08Zok2yAcC2AJRu89NW8TgzaL/8IQG8KPzXekeVpU9dCQW+ATzEML9ORuQ==}
     hasBin: true
     peerDependencies:
       react: '*'
@@ -3132,8 +3131,6 @@ snapshots:
     dependencies:
       character-entities: 2.0.2
 
-  dedent@1.5.3: {}
-
   dequal@2.0.3: {}
 
   detect-libc@1.0.3: {}
@@ -3516,6 +3513,8 @@ snapshots:
       universalify: 2.0.1
     optionalDependencies:
       graceful-fs: 4.2.11
+
+  just-kebab-case@4.2.0: {}
 
   kleur@3.0.3: {}
 
@@ -4333,6 +4332,8 @@ snapshots:
 
   sprintf-js@1.0.3: {}
 
+  string-dedent@3.0.1: {}
+
   string-width@4.2.3:
     dependencies:
       emoji-regex: 8.0.0
@@ -4454,11 +4455,10 @@ snapshots:
 
   undici@7.1.0: {}
 
-  unframer@2.7.7(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(undici@7.1.0):
+  unframer@2.7.8(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(undici@7.1.0):
     dependencies:
       async-sema: 3.1.1
       cac: 6.7.14
-      dedent: 1.5.3
       dprint-node: 1.0.8
       esbuild: 0.24.0
       esbuild-plugins-node-modules-polyfill: 1.6.8(esbuild@0.24.0)
@@ -4466,6 +4466,7 @@ snapshots:
       find-up: 5.0.0
       fs-extra: 11.2.0
       json5: 2.2.3
+      just-kebab-case: 4.2.0
       marked: 15.0.3
       marked-terminal: 7.2.1(marked@15.0.3)
       nanospinner: 1.2.2
@@ -4474,9 +4475,9 @@ snapshots:
       react: 19.0.0
       react-dom: 19.0.0(react@19.0.0)
       real-framer-motion: framer-motion@11.2.10(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+      string-dedent: 3.0.1
     transitivePeerDependencies:
       - '@emotion/is-prop-valid'
-      - babel-plugin-macros
       - undici
 
   unicode-emoji-modifier-base@1.0.0: {}

@@ -11,7 +11,10 @@ export interface Props {
     width?: any
     height?: any
     layoutId?: string
-
+    "variant"?: 'Primary' | 'Secondary' | 'Variant 3' | 'Variant 4' | 'Variant 5'
+    "buttonText"?: string
+    "buttonLink"?: string
+    "smoothScroll"?: boolean
 }
 
 const ButtonsPrimaryFramerComponent = (props: Props) => any

@@ -11,7 +11,8 @@ export interface Props {
     width?: any
     height?: any
     layoutId?: string
-
+    "variant"?: 'Default' | 'Copied'
+    "text"?: string
 }
 
 const ButtonsCopySnippetFramerComponent = (props: Props) => any

@@ -11,7 +11,7 @@ export interface Props {
     width?: any
     height?: any
     layoutId?: string
-
+    "variant"?: 'Variant 1' | 'Favicon'
 }
 
 const NavigationLogoFramerComponent = (props: Props) => any

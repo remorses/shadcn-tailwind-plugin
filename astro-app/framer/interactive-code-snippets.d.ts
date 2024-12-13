@@ -11,7 +11,7 @@ export interface Props {
     width?: any
     height?: any
     layoutId?: string
-
+    "variant"?: 'Python' | 'JavaScript' | 'C-Sharp' | 'Java' | 'Php' | 'Ruby'
 }
 
 const InteractiveCodeSnippetsFramerComponent = (props: Props) => any

@@ -11,7 +11,9 @@ export interface Props {
     width?: any
     height?: any
     layoutId?: string
-
+    "variant"?: 'Variant 1' | 'Variant 2' | 'Variant 3'
+    "buttonText"?: string
+    "link"?: string
 }
 
 const ButtonsSignUpButtonFramerComponent = (props: Props) => any

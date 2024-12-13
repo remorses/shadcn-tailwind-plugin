@@ -11,7 +11,8 @@ export interface Props {
     width?: any
     height?: any
     layoutId?: string
-
+    "variant"?: 'Sound Off' | 'Sound On'
+    "audio"?: string
 }
 
 const ButtonsSoundOnTapFramerComponent = (props: Props) => any
