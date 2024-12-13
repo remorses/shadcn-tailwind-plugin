@@ -1,26 +1,33 @@
 ---
-import CardsTestimonialCardFramerComponent from '../../framer/cards-testimonial-card';
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import CardsStatsCardFramerComponent from '../../framer/cards-stats-card'
+import CardsTestimonialCardFramerComponent from '../../framer/cards-testimonial-card'
+import Welcome from '../components/Welcome.astro'
+import Layout from '../layouts/Layout.astro'
+import '../../framer/styles.css'
+import IntegrationsFramerComponent from '../../framer/integrations'
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
-<Layout title="Welcome to Astro.">
-	<div class="flex flex-col gap-4">
-		<div class="grid grid-cols-4 gap-4 max-w-7xl mx-auto">
-			<CardsTestimonialCardFramerComponent  />
-			<CardsTestimonialCardFramerComponent  />
-			<CardsTestimonialCardFramerComponent  />
-			<CardsTestimonialCardFramerComponent  />
-			<CardsTestimonialCardFramerComponent  />
-			<CardsTestimonialCardFramerComponent  />
-			<CardsTestimonialCardFramerComponent  />
-			<CardsTestimonialCardFramerComponent  />
-			<CardsTestimonialCardFramerComponent  />
-			<CardsTestimonialCardFramerComponent  />
-			<CardsTestimonialCardFramerComponent  />
-			<CardsTestimonialCardFramerComponent  />
-		</div>
-	</div>
+
+<Layout title='Welcome to Astro.'>
+    <div class='flex flex-col gap-4'>
+        <div class='grid grid-cols-4 gap-4 max-w-7xl mx-auto'>
+            <CardsTestimonialCardFramerComponent />
+            <CardsTestimonialCardFramerComponent />
+            <CardsTestimonialCardFramerComponent />
+            <CardsTestimonialCardFramerComponent />
+            <CardsTestimonialCardFramerComponent />
+            <CardsTestimonialCardFramerComponent />
+            <CardsTestimonialCardFramerComponent />
+            <CardsTestimonialCardFramerComponent />
+            <CardsTestimonialCardFramerComponent />
+            <CardsTestimonialCardFramerComponent />
+            <CardsTestimonialCardFramerComponent />
+            <CardsTestimonialCardFramerComponent />
+        </div>
+        <div class="flex justify-center">
+            <IntegrationsFramerComponent />
+        </div>
+    </div>
 </Layout>
