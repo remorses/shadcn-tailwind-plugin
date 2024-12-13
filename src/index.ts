@@ -81,7 +81,7 @@ function processColorConfig<T extends Record<string, string>>(
     ) as Record<keyof T, string>
 }
 
-export default function (options: PluginOptions = {}) {
+export function shadcnPlugin(options: PluginOptions = {}) {
     const processedLightColors = processColorConfig({
         ...defaultLightColors,
         ...options.lightColors,
@@ -165,3 +165,5 @@ export default function (options: PluginOptions = {}) {
         },
     )
 }
+
+export default shadcnPlugin
