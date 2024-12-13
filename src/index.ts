@@ -1,9 +1,6 @@
 import plugin from 'tailwindcss/plugin'
 import type { Config } from 'tailwindcss'
-
-type ColorConfig = {
-    [key: string]: string
-}
+import { parseToHsla, hsla } from 'color2k'
 
 const defaultLightColors = {
     background: '0 0% 100%',
@@ -25,7 +22,7 @@ const defaultLightColors = {
     destructive: '0 100% 50%',
     'destructive-foreground': '210 40% 98%',
     ring: '215 20.2% 65.1%',
-}
+} as const
 
 const defaultDarkColors = {
     background: '224 71% 4%',
@@ -47,31 +44,67 @@ const defaultDarkColors = {
     destructive: '0 63% 31%',
     'destructive-foreground': '210 40% 98%',
     ring: '216 34% 17%',
-}
+} as const
 
 interface PluginOptions {
-    lightColors?: Partial<ColorConfig>
-    darkColors?: Partial<ColorConfig>
+    lightColors?: Partial<Record<keyof typeof defaultLightColors, string>>
+    darkColors?: Partial<Record<keyof typeof defaultDarkColors, string>>
+}
+
+function convertColorToHslValues(color: string): string {
+    try {
+        // If it's already in our HSL format, return as is
+        if (/^\d+(\.\d+)?\s+\d+(\.\d+)?%\s+\d+(\.\d+)?%$/.test(color)) {
+            return color
+        }
+        
+        // Convert any valid CSS color to HSL values
+        const [h, s, l] = parseToHsla(color)
+        const hue = Math.round(h * 360)
+        const saturation = Math.round(s * 100)
+        const lightness = Math.round(l * 100)
+        return `${hue} ${saturation}% ${lightness}%`
+    } catch (error) {
+        console.warn(`Invalid color value: ${color}. Using default.`)
+        return color
+    }
+}
+
+function processColorConfig<T extends Record<string, string>>(
+    colors: T,
+): Record<keyof T, string> {
+    return Object.fromEntries(
+        Object.entries(colors).map(([key, value]) => [
+            key,
+            convertColorToHslValues(value),
+        ]),
+    ) as Record<keyof T, string>
 }
 
 export default function(options: PluginOptions = {}) {
-    const lightColors = { ...defaultLightColors, ...options.lightColors }
-    const darkColors = { ...defaultDarkColors, ...options.darkColors }
+    const processedLightColors = processColorConfig({
+        ...defaultLightColors,
+        ...options.lightColors,
+    })
+    const processedDarkColors = processColorConfig({
+        ...defaultDarkColors,
+        ...options.darkColors,
+    })
 
     return plugin(
         function ({ addBase }) {
             addBase({
                 ':root': Object.fromEntries(
-                    Object.entries(lightColors).map(([key, value]) => [
+                    Object.entries(processedLightColors).map(([key, value]) => [
                         `--${key}`,
                         value,
-                    ])
+                    ]),
                 ),
                 '.dark': Object.fromEntries(
-                    Object.entries(darkColors).map(([key, value]) => [
+                    Object.entries(processedDarkColors).map(([key, value]) => [
                         `--${key}`,
                         value,
-                    ])
+                    ]),
                 ),
                 '*': {
                     'border-color': 'hsl(var(--border))',

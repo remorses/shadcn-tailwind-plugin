@@ -21,7 +21,8 @@
     "license": "MIT",
     "dependencies": {
         "tailwindcss": "^3.4.6",
-        "tailwindcss-animate": "^1.0.7"
+        "tailwindcss-animate": "^1.0.7",
+        "color2k": "^2.0.3"
     },
     "devDependencies": {
         "@changesets/cli": "^2.27.7",
