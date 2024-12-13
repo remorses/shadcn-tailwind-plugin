@@ -1105,7 +1105,7 @@ NavigationContainer
     font-weight: 400;
 }
 
-/* used by buttons-copy-snippet.js, buttons-sign-up-button.js, cards-stats-card.js, cards-testimonial-card.js, forms-contact-sales-form.js, interactive-code-snippets.js, interactive-customer-stories.js, tag.js */
+/* used by buttons-copy-snippet.js, buttons-sign-up-button.js, cards-stats-card.js, forms-contact-sales-form.js, interactive-code-snippets.js, interactive-customer-stories.js, tag.js */
 
 @font-face {
     font-family: 'Inter'; 
@@ -1115,7 +1115,7 @@ NavigationContainer
     unicodeRange: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
 }
 
-/* used by buttons-primary.js */
+/* used by buttons-primary.js, cards-testimonial-card.js */
 
 @font-face {
     font-family: 'Inter'; 

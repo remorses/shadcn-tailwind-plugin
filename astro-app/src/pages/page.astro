@@ -1,4 +1,5 @@
 ---
+import 'website/styles.css'
 import CardsStatsCardFramerComponent from '../../framer/cards-stats-card'
 import CardsTestimonialCardFramerComponent from '../../framer/cards-testimonial-card'
 import Welcome from '../components/Welcome.astro'
@@ -14,22 +15,22 @@ import FormsContactSalesFormFramerComponent from '../../framer/forms-contact-sal
 <Layout title='Welcome to Astro.'>
     <div class='flex flex-col gap-4'>
         <div class='grid grid-cols-4 gap-4 max-w-7xl mx-auto'>
-            <CardsTestimonialCardFramerComponent />
-            <CardsTestimonialCardFramerComponent />
-            <CardsTestimonialCardFramerComponent />
-            <CardsTestimonialCardFramerComponent />
-            <CardsTestimonialCardFramerComponent />
-            <CardsTestimonialCardFramerComponent positionAndCompany='Something'/>
-            <CardsTestimonialCardFramerComponent />
-            <CardsTestimonialCardFramerComponent />
-            <CardsTestimonialCardFramerComponent />
-            <CardsTestimonialCardFramerComponent />
-            <CardsTestimonialCardFramerComponent />
-            <CardsTestimonialCardFramerComponent />
+            <CardsTestimonialCardFramerComponent client:load />
+            <CardsTestimonialCardFramerComponent client:load />
+            <CardsTestimonialCardFramerComponent client:load />
+            <CardsTestimonialCardFramerComponent client:load />
+            <CardsTestimonialCardFramerComponent client:load />
+            <CardsTestimonialCardFramerComponent positionAndCompany='Something' client:load />
+            <CardsTestimonialCardFramerComponent client:load />
+            <CardsTestimonialCardFramerComponent client:load />
+            <CardsTestimonialCardFramerComponent client:load />
+            <CardsTestimonialCardFramerComponent client:load />
+            <CardsTestimonialCardFramerComponent client:load />
+            <CardsTestimonialCardFramerComponent client:load />
         </div>
         <div class='flex justify-center'>
-            <IntegrationsFramerComponent  />
+            <IntegrationsFramerComponent client:load />
         </div>
-        <FormsContactSalesFormFramerComponent variant=''/>
+        <FormsContactSalesFormFramerComponent  client:load />
     </div>
 </Layout>
