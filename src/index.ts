@@ -1,0 +1,1 @@
+export { tremorPlugin } from './plugin'
